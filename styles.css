@@ -69,7 +69,6 @@ body {
   align-items: center;
   text-align: center;
   color: #fff;
-  padding: 1rem;
 }
 
 header {
@@ -139,7 +138,9 @@ header {
   color: rgb(0, 128, 128);
 }
 
-.about-us, .our-services, .featured-tours {
+.about-us,
+.our-services,
+.featured-tours {
   height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
@@ -183,7 +184,9 @@ h2 {
     width: 90%;
   }
 
-  .about-us, .our-services, .featured-tours {
+  .about-us,
+  .our-services,
+  .featured-tours {
     height: calc(100vh);
   }
 }
