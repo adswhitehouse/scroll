@@ -82,11 +82,16 @@ header {
   padding-inline: 10%;
   padding-block: 0.5rem;
   gap: 1rem;
+  transition: 0.5s;
+}
+
+.header-scrolled {
+  background-color: #fff;
 }
 
 .nav-list {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   font-size: 1.25rem;
 }
 
@@ -99,6 +104,10 @@ header {
 
 .nav-list a:hover {
   color: rgb(0, 128, 128);
+}
+
+.nav-list .a-scrolled {
+  color: #000;
 }
 
 .hero-content {
@@ -130,10 +139,39 @@ header {
   color: rgb(0, 128, 128);
 }
 
+.about-us, .our-services, .featured-tours {
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.about-us {
+  background-color: #829c9c;
+}
+
+.our-services {
+  background-color: #97adb2;
+}
+
+.featured-tours {
+  background-color: #b4ced2;
+}
+
+h2 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.title-span {
+  color: rgb(0, 128, 128);
+}
+
 @media screen and (max-width: 45rem) {
   header {
     flex-direction: column;
     gap: 0;
+    position: absolute;
   }
 
   .nav-list {
@@ -143,5 +181,9 @@ header {
 
   .hero-content {
     width: 90%;
+  }
+
+  .about-us, .our-services, .featured-tours {
+    height: calc(100vh);
   }
 }
