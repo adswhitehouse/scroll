@@ -52,10 +52,12 @@ select {
 }
 /* CSS Reset */
 
+/* Global Styles */
 body {
   font-family: "Space Mono", serif;
 }
 
+/* Hero Section */
 .hero {
   background: linear-gradient(
       0deg,
@@ -71,6 +73,7 @@ body {
   color: #fff;
 }
 
+/* Header */
 header {
   position: fixed;
   top: 0;
@@ -79,8 +82,8 @@ header {
   align-items: center;
   width: 100%;
   padding-inline: 10%;
-  padding-block: 0.5rem;
-  gap: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   transition: 0.5s;
 }
 
@@ -89,6 +92,24 @@ header {
   box-shadow: 0 0 5px #000;
 }
 
+.hamburger {
+  background-color: transparent;
+  border: none;
+  padding: 0.5rem;
+  font-size: 2.5rem;
+  color: rgb(0, 128, 128);
+  position: absolute;
+  right: 10%;
+  visibility: hidden;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.hamburger:hover {
+  transform: rotate(90deg);
+}
+
+/* Navigation */
 .nav-list {
   display: flex;
   gap: 2rem;
@@ -110,6 +131,7 @@ header {
   color: #000;
 }
 
+/* Hero Content */
 .hero-content {
   width: 60%;
   display: flex;
@@ -139,6 +161,7 @@ header {
   color: rgb(0, 128, 128);
 }
 
+/* Information Sections */
 .about-us,
 .our-services,
 .featured-tours {
@@ -169,6 +192,7 @@ h2 {
   color: rgb(0, 128, 128);
 }
 
+/* Footer */
 footer {
   display: flex;
   justify-content: center;
@@ -185,17 +209,19 @@ footer {
   position: fixed;
   right: 1rem;
   bottom: 1rem;
-  padding: 0.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
   background-color: transparent;
   border: 2px solid #fff;
   border-radius: 0.25rem;
   color: #fff;
-  visibility: hidden;
   transition: 0.25s;
+  opacity: 0;
 }
 
 .footer-btn-active {
-  visibility: visible;
+  opacity: 1;
 }
 
 .footer-btn:hover {
@@ -203,25 +229,61 @@ footer {
   color: rgb(0, 128, 128);
 }
 
+/* Media Query Smaller Screens */
 @media screen and (max-width: 45rem) {
   header {
     flex-direction: column;
-    gap: 0;
-    position: absolute;
+    gap: 0.5rem;
+    background-color: #fff;
+    align-items: flex-start;
+    padding-bottom: 0;
+    box-shadow: 0 0 5px #000;
+    padding-inline: 0;
+  }
+
+  .header-img {
+    padding-left: 10%;
+  }
+
+  .nav-list a {
+    color: #000;
+  }
+
+  .hamburger {
+    visibility: visible;
   }
 
   .nav-list {
     flex-direction: column;
     gap: 0;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  .nav-list-active {
+    height: 152px;
+  }
+
+  .nav-list li {
+    width: 100vw;
+    text-align: left;
+  }
+
+  .nav-list .nav-anchor {
+    display: block;
+    transition: 0.25s;
+    padding-left: 1rem;
+    padding-block: 0.25rem;
+  }
+
+  .nav-list .nav-anchor:hover {
+    background-color: rgb(0, 128, 128);
+    color: #fff;
+    padding-left: 2rem;
   }
 
   .hero-content {
     width: 90%;
-  }
-
-  .about-us,
-  .our-services,
-  .featured-tours {
-    height: calc(100vh);
   }
 }

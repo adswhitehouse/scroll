@@ -1,7 +1,19 @@
+// Variables
 let header = document.querySelector("header");
 let navAnchors = document.querySelectorAll(".jsNavAnchor");
 let footerBtn = document.querySelector(".jsFooterBtn");
+let hamburger = document.querySelector(".jsHamburger");
+let navList = document.querySelector(".jsNavList");
 
+// Creates an interactive navigation on
+hamburger.addEventListener("mouseover", () => {
+  navList.classList.add("nav-list-active");
+});
+navList.addEventListener("mouseleave", () => {
+  navList.classList.remove("nav-list-active");
+});
+
+// Scroll event listener that displays and hides scroll to top button and changes header styles
 window.addEventListener("scroll", () => {
   scrollY > 500
     ? footerBtn.classList.add("footer-btn-active")
@@ -20,44 +32,35 @@ window.addEventListener("scroll", () => {
   }
 });
 
+// Height of page header used for calculations
 let headerHeight = 79.96;
 
+// Creates click event listener for each navigation anchor and scrolls to the appropriate section
 navAnchors.forEach((anchor) => {
   anchor.addEventListener("click", (e) => {
     e.preventDefault();
-    if (window.innerWidth > 720) {
-      if (anchor.dataset.id === "home") {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      } else if (anchor.dataset.id === "about") {
-        window.scrollTo({
-          top: window.innerHeight - headerHeight,
-          behavior: "smooth",
-        });
-      } else if (anchor.dataset.id === "services") {
-        window.scrollTo({
-          top: window.innerHeight * 2 - headerHeight * 2,
-          behavior: "smooth",
-        });
-      } else {
-        window.scrollTo({
-          top: window.innerHeight * 3 - headerHeight * 3,
-          behavior: "smooth",
-        });
-      }
+    if (anchor.dataset.id === "home") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (anchor.dataset.id === "about") {
+      window.scrollTo({
+        top: window.innerHeight - headerHeight,
+        behavior: "smooth",
+      });
+    } else if (anchor.dataset.id === "services") {
+      window.scrollTo({
+        top: window.innerHeight * 2 - headerHeight * 2,
+        behavior: "smooth",
+      });
     } else {
-      if (anchor.dataset.id === "home") {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      } else if (anchor.dataset.id === "about") {
-        window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
-      } else if (anchor.dataset.id === "services") {
-        window.scrollTo({ top: window.innerHeight * 2, behavior: "smooth" });
-      } else {
-        window.scrollTo({ top: window.innerHeight * 3, behavior: "smooth" });
-      }
+      window.scrollTo({
+        top: window.innerHeight * 3 - headerHeight * 3,
+        behavior: "smooth",
+      });
     }
   });
 });
 
+// Scroll to top button
 footerBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
