@@ -86,6 +86,7 @@ header {
 
 .header-scrolled {
   background-color: #fff;
+  box-shadow: 0 0 5px #000;
 }
 
 .nav-list {
@@ -165,6 +166,40 @@ h2 {
 }
 
 .title-span {
+  color: rgb(0, 128, 128);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem;
+  background-color: rgb(0, 128, 128);
+  color: #fff;
+  position: relative;
+  text-align: center;
+  padding-inline: 1rem;
+}
+
+.footer-btn {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.5rem;
+  background-color: transparent;
+  border: 2px solid #fff;
+  border-radius: 0.25rem;
+  color: #fff;
+  visibility: hidden;
+  transition: 0.25s;
+}
+
+.footer-btn-active {
+  visibility: visible;
+}
+
+.footer-btn:hover {
+  background-color: #fff;
   color: rgb(0, 128, 128);
 }
 

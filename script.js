@@ -1,7 +1,12 @@
 let header = document.querySelector("header");
 let navAnchors = document.querySelectorAll(".jsNavAnchor");
+let footerBtn = document.querySelector(".jsFooterBtn");
 
 window.addEventListener("scroll", () => {
+  scrollY > 500
+    ? footerBtn.classList.add("footer-btn-active")
+    : footerBtn.classList.remove("footer-btn-active");
+
   if (scrollY >= 25 && window.innerWidth > 720) {
     header.classList.add("header-scrolled");
     navAnchors.forEach((anchor) => {
@@ -15,7 +20,7 @@ window.addEventListener("scroll", () => {
   }
 });
 
-let headerHeight = 77.96;
+let headerHeight = 79.96;
 
 navAnchors.forEach((anchor) => {
   anchor.addEventListener("click", (e) => {
@@ -51,4 +56,8 @@ navAnchors.forEach((anchor) => {
       }
     }
   });
+});
+
+footerBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
 });
