@@ -61,22 +61,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Hero Section */
-.hero {
-  background: linear-gradient(
-      0deg,
-      rgba(0, 128, 128, 0.5),
-      rgba(0, 128, 128, 0.5)
-    ),
-    url(./images/hero-bcg.jpeg) no-repeat center center / cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: #fff;
-}
-
 /* Header */
 header {
   position: fixed;
@@ -141,7 +125,22 @@ header {
   color: #000;
 }
 
-/* Hero Content */
+/* Hero */
+.hero {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 128, 128, 0.5),
+      rgba(0, 128, 128, 0.5)
+    ),
+    url(./images/hero-bcg.jpeg) no-repeat center center / cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
 .hero-content {
   width: 60%;
   display: flex;
@@ -155,7 +154,7 @@ header {
   font-size: 3rem;
 }
 
-.hero-content button {
+.hero-content a {
   padding: 0.25rem 0.75rem;
   border: 2px solid #fff;
   background-color: transparent;
@@ -164,11 +163,12 @@ header {
   letter-spacing: 0.1rem;
   cursor: pointer;
   transition: 0.25s;
+  text-decoration: none;
 }
 
-.hero-content button:hover {
-  background-color: #fff;
+.hero-content a:hover {
   color: rgb(0, 128, 128);
+  background-color: #fff;
 }
 
 /* Information Sections */

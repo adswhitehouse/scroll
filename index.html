@@ -18,7 +18,7 @@
 
 <body>
   <!-- Hero Section-->
-  <section class="hero">
+  <section class="hero" id="home">
     <!-- Header -->
     <header>
       <!-- Header Logo -->
@@ -27,10 +27,10 @@
       <nav class="nav-container jsNavContainer">
         <!-- Header Navigation -->
         <ul role="list" class="nav-list jsNavList">
-          <li><a href="" class="jsNavAnchor nav-anchor" data-id="home">Home</a></li>
-          <li><a href="" class="jsNavAnchor nav-anchor" data-id="about">About</a></li>
-          <li><a href="" class="jsNavAnchor nav-anchor" data-id="services">Services</a></li>
-          <li><a href="" class="jsNavAnchor nav-anchor" data-id="tours">Tours</a></li>
+          <li><a href="#home" class="jsNavAnchor nav-anchor" data-id="home">Home</a></li>
+          <li><a href="#about" class="jsNavAnchor nav-anchor" data-id="about">About</a></li>
+          <li><a href="#services" class="jsNavAnchor nav-anchor" data-id="services">Services</a></li>
+          <li><a href="#tours" class="jsNavAnchor nav-anchor" data-id="tours">Tours</a></li>
         </ul>
       </nav>
       <!-- Header Hamburger Menu -->
@@ -41,19 +41,19 @@
       <h1>scroll project</h1>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora aliquam optio iusto, quod reiciendis officia
         ab possimus cum? Autem sapiente, vel veritatis numquam quasi ullam!</p>
-      <button class="jsNavAnchor" data-id="explore">explore tours</button>
+      <a class="jsNavAnchor" href="#tours">explore tours</a>
     </div>
   </section>
   <!-- Information Sections -->
-  <section class="about-us">
+  <section class="about-us" id="about">
     <h2>about <span class="title-span">us</span></h2>
   </section>
 
-  <section class="our-services">
+  <section class="our-services" id="services">
     <h2>our <span class="title-span">services</span></h2>
   </section>
 
-  <section class="featured-tours">
+  <section class="featured-tours" id="tours">
     <h2>featured <span class="title-span">tours</span></h2>
   </section>
   <!-- Footer -->

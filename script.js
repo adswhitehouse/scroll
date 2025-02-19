@@ -14,13 +14,9 @@ hamburger.addEventListener("mouseover", () => {
   navContainer.style.height = `${linksHeight}px`;
 });
 navList.addEventListener("mouseleave", () => {
-  collapseNav();
-});
-
-function collapseNav() {
   hamburger.classList.remove("hamburger-hover");
   navContainer.style.height = "0";
-}
+});
 
 // Scroll event listener that displays and hides scroll to top button and changes header styles
 window.addEventListener("scroll", () => {
@@ -48,25 +44,12 @@ let headerHeight = 79.96;
 navAnchors.forEach((anchor) => {
   anchor.addEventListener("click", (e) => {
     e.preventDefault();
-    if (anchor.dataset.id === "home") {
-      window.scrollTo({ top: 0 });
-      collapseNav();
-    } else if (anchor.dataset.id === "about") {
-      window.scrollTo({
-        top: window.innerHeight - headerHeight,
-      });
-      collapseNav();
-    } else if (anchor.dataset.id === "services") {
-      window.scrollTo({
-        top: window.innerHeight * 2 - headerHeight * 2,
-      });
-      collapseNav();
-    } else {
-      window.scrollTo({
-        top: window.innerHeight * 3 - headerHeight * 3,
-      });
-      collapseNav();
-    }
+    let id = e.currentTarget.getAttribute("href").slice(1);
+    let element = document.getElementById(id);
+    let position = element.offsetTop;
+    window.scrollTo({ top: position - headerHeight });
+    hamburger.classList.remove("hamburger-hover");
+    navContainer.style.height = "0";
   });
 });
 
