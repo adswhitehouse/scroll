@@ -4,6 +4,7 @@ let navAnchors = document.querySelectorAll(".jsNavAnchor");
 let footerBtn = document.querySelector(".jsFooterBtn");
 let hamburger = document.querySelector(".jsHamburger");
 let navList = document.querySelector(".jsNavList");
+let footerDate = document.querySelector(".jsFooterDate")
 
 // Creates an interactive navigation on
 hamburger.addEventListener("mouseover", () => {
@@ -64,3 +65,6 @@ navAnchors.forEach((anchor) => {
 footerBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+// Dynamically updates the footer date
+footerDate.innerHTML = new Date().getFullYear()
