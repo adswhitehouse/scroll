@@ -57,6 +57,10 @@ body {
   font-family: "Space Mono", serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Hero Section */
 .hero {
   background: linear-gradient(
@@ -105,12 +109,18 @@ header {
   transition: 0.25s;
 }
 
-.hamburger:hover {
+.hamburger-hover {
   transform: rotate(90deg);
 }
 
 /* Navigation */
 .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-list {
   display: flex;
   gap: 2rem;
   font-size: 1.25rem;
@@ -253,9 +263,12 @@ footer {
     visibility: visible;
   }
 
-  .nav-container {
+  .nav-list {
     flex-direction: column;
     gap: 0;
+  }
+
+  .nav-container {
     height: 0;
     overflow: hidden;
     transition: 0.5s;

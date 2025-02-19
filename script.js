@@ -9,12 +9,18 @@ let navContainer = document.querySelector(".jsNavContainer");
 
 // Creates a dynamic, interactive navigation
 hamburger.addEventListener("mouseover", () => {
+  hamburger.classList.add("hamburger-hover");
   let linksHeight = navList.getBoundingClientRect().height;
   navContainer.style.height = `${linksHeight}px`;
 });
 navList.addEventListener("mouseleave", () => {
-  navContainer.style.height = "0";
+  collapseNav();
 });
+
+function collapseNav() {
+  hamburger.classList.remove("hamburger-hover");
+  navContainer.style.height = "0";
+}
 
 // Scroll event listener that displays and hides scroll to top button and changes header styles
 window.addEventListener("scroll", () => {
@@ -22,7 +28,7 @@ window.addEventListener("scroll", () => {
     ? footerBtn.classList.add("footer-btn-active")
     : footerBtn.classList.remove("footer-btn-active");
 
-  if (scrollY >= 25 && window.innerWidth > 720) {
+  if (scrollY > 0 && window.innerWidth > 720) {
     header.classList.add("header-scrolled");
     navAnchors.forEach((anchor) => {
       anchor.classList.add("a-scrolled");
@@ -43,29 +49,30 @@ navAnchors.forEach((anchor) => {
   anchor.addEventListener("click", (e) => {
     e.preventDefault();
     if (anchor.dataset.id === "home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      window.scrollTo({ top: 0 });
+      collapseNav();
     } else if (anchor.dataset.id === "about") {
       window.scrollTo({
         top: window.innerHeight - headerHeight,
-        behavior: "smooth",
       });
+      collapseNav();
     } else if (anchor.dataset.id === "services") {
       window.scrollTo({
         top: window.innerHeight * 2 - headerHeight * 2,
-        behavior: "smooth",
       });
+      collapseNav();
     } else {
       window.scrollTo({
         top: window.innerHeight * 3 - headerHeight * 3,
-        behavior: "smooth",
       });
+      collapseNav();
     }
   });
 });
 
 // Scroll to top button
 footerBtn.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  window.scrollTo({ top: 0 });
 });
 
 // Dynamically updates the footer date
