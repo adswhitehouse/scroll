@@ -175,7 +175,7 @@ header {
 .about-us,
 .our-services,
 .featured-tours {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 79.96px);
   display: flex;
   justify-content: center;
   padding-top: 1rem;

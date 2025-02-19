@@ -38,7 +38,7 @@ window.addEventListener("scroll", () => {
 });
 
 // Height of page header used for calculations
-let headerHeight = 79.96;
+let headerHeight = header.getBoundingClientRect().height;
 
 // Creates click event listener for each navigation anchor and scrolls to the appropriate section
 navAnchors.forEach((anchor) => {
