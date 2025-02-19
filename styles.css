@@ -110,7 +110,7 @@ header {
 }
 
 /* Navigation */
-.nav-list {
+.nav-container {
   display: flex;
   gap: 2rem;
   font-size: 1.25rem;
@@ -253,16 +253,12 @@ footer {
     visibility: visible;
   }
 
-  .nav-list {
+  .nav-container {
     flex-direction: column;
     gap: 0;
     height: 0;
     overflow: hidden;
     transition: 0.5s;
-  }
-
-  .nav-list-active {
-    height: 152px;
   }
 
   .nav-list li {

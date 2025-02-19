@@ -4,14 +4,16 @@ let navAnchors = document.querySelectorAll(".jsNavAnchor");
 let footerBtn = document.querySelector(".jsFooterBtn");
 let hamburger = document.querySelector(".jsHamburger");
 let navList = document.querySelector(".jsNavList");
-let footerDate = document.querySelector(".jsFooterDate")
+let footerDate = document.querySelector(".jsFooterDate");
+let navContainer = document.querySelector(".jsNavContainer");
 
-// Creates an interactive navigation on
+// Creates a dynamic, interactive navigation
 hamburger.addEventListener("mouseover", () => {
-  navList.classList.add("nav-list-active");
+  let linksHeight = navList.getBoundingClientRect().height;
+  navContainer.style.height = `${linksHeight}px`;
 });
 navList.addEventListener("mouseleave", () => {
-  navList.classList.remove("nav-list-active");
+  navContainer.style.height = "0";
 });
 
 // Scroll event listener that displays and hides scroll to top button and changes header styles
@@ -67,4 +69,4 @@ footerBtn.addEventListener("click", () => {
 });
 
 // Dynamically updates the footer date
-footerDate.innerHTML = new Date().getFullYear()
+footerDate.innerHTML = new Date().getFullYear();
